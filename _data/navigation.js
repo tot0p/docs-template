@@ -60,8 +60,8 @@ function generateUrl(filePath) {
   // Convert file path to URL path
   let url = filePath.replace(/\\/g, '/'); // Convert Windows paths
   url = url.replace(/\.md$/, '/'); // Remove .md extension and add trailing slash
-  // Return relative path that will be processed by | url filter
-  return `docs/${url}`;
+  // Return absolute path starting with / so | url filter can add pathPrefix
+  return `/docs/${url}`;
 }
 
 module.exports = function() {
