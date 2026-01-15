@@ -20,11 +20,26 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+      
+      - name: Get pathPrefix from repository
+        id: get-prefix
+        run: |
+          # Try to get prefix from package.json or use repository name
+          if [ -n "${{ vars.PATH_PREFIX }}" ]; then
+            PREFIX="${{ vars.PATH_PREFIX }}"
+          else
+            REPO_NAME="${{ github.repository }}"
+            REPO_NAME="${REPO_NAME#*/}"
+            PREFIX="/${REPO_NAME}/"
+          fi
+          echo "prefix=$PREFIX" >> $GITHUB_OUTPUT
+          echo "Using path prefix: $PREFIX"
         
       - name: Build site
         run: npm run build
         env:
           ELEVENTY_ENV: production
+          PREFIX: ${{ steps.get-prefix.outputs.prefix }}
           
       - name: Deploy to GitHub Pages
         run: |
