@@ -165,7 +165,9 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
-    pathPrefix: '',
+    // Use environment variable for GitHub Pages
+    // Set pathPrefix to "/" for local dev or your repo name for GitHub Pages
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/' : '/',
     dir: {
       input: ".",
       includes: "_includes",
