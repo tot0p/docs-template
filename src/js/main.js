@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        const pathPrefix = window.SITE_PATH_PREFIX || '';
         const html = results.map(result => {
             const breadcrumb = result.type === 'section' ? 
                 `<div class="search-result-breadcrumb">${escapeHtml(result.title)} › ${escapeHtml(result.section)}</div>` :
@@ -283,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 '';
             
             return `
-                <a href="${result.url}" class="search-result-item">
+                <a href="${pathPrefix}${result.url}" class="search-result-item">
                     ${breadcrumb}
                     <div class="search-result-header">
                         <div class="search-result-title">${result.type === 'section' ? '' : escapeHtml(result.title)}${sectionBadge}</div>
