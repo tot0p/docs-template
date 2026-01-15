@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Guide</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>Configuration Guide</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="configuration-guide" tabindex="-1"><a class="header-anchor" href="#configuration-guide">Configuration Guide</a></h1>
+<p>Learn how to configure your application for optimal performance.</p>
+<h2 id="configuration-files" tabindex="-1"><a class="header-anchor" href="#configuration-files">Configuration Files</a></h2>
+<h3 id="main-configuration-file" tabindex="-1"><a class="header-anchor" href="#main-configuration-file">Main Configuration File</a></h3>
+<p>Create a <code>config.json</code> in your project root:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"app"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"My Application"</span><span class="token punctuation">,</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">3000</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"database"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+    <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">5432</span><span class="token punctuation">,</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"mydb"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"features"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"caching"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"logging"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="environment-variables" tabindex="-1"><a class="header-anchor" href="#environment-variables">Environment Variables</a></h3>
+<p>Create a <code>.env</code> file:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">NODE_ENV</span><span class="token operator">=</span>development
+<span class="token assign-left variable">PORT</span><span class="token operator">=</span><span class="token number">3000</span>
+<span class="token assign-left variable">API_KEY</span><span class="token operator">=</span>your_api_key_here
+<span class="token assign-left variable">DATABASE_URL</span><span class="token operator">=</span>postgresql://localhost/mydb
+<span class="token assign-left variable">SECRET_KEY</span><span class="token operator">=</span>your_secret_key
+
+<span class="token comment"># Optional settings</span>
+<span class="token assign-left variable">DEBUG</span><span class="token operator">=</span>true
+<span class="token assign-left variable">LOG_LEVEL</span><span class="token operator">=</span>info</code></pre>
+<h2 id="configuration-options" tabindex="-1"><a class="header-anchor" href="#configuration-options">Configuration Options</a></h2>
+<h3 id="application-settings" tabindex="-1"><a class="header-anchor" href="#application-settings">Application Settings</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.name</code></td>
+<td>string</td>
+<td>-</td>
+<td>Application name</td>
+</tr>
+<tr>
+<td><code>app.port</code></td>
+<td>number</td>
+<td><code>3000</code></td>
+<td>Server port</td>
+</tr>
+<tr>
+<td><code>app.host</code></td>
+<td>string</td>
+<td><code>localhost</code></td>
+<td>Server host</td>
+</tr>
+<tr>
+<td><code>app.timeout</code></td>
+<td>number</td>
+<td><code>30000</code></td>
+<td>Request timeout (ms)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="feature-flags" tabindex="-1"><a class="header-anchor" href="#feature-flags">Feature Flags</a></h3>
+<p>Enable or disable features:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"features"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"authorization"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"caching"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"compression"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"cors"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"rateLimit"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="database-configuration" tabindex="-1"><a class="header-anchor" href="#database-configuration">Database Configuration</a></h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"database"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"postgresql"</span><span class="token punctuation">,</span>
+    <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+    <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">5432</span><span class="token punctuation">,</span>
+    <span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">"admin"</span><span class="token punctuation">,</span>
+    <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"password"</span><span class="token punctuation">,</span>
+    <span class="token property">"database"</span><span class="token operator">:</span> <span class="token string">"mydb"</span><span class="token punctuation">,</span>
+    <span class="token property">"ssl"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"pool"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"min"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token property">"max"</span><span class="token operator">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="environment-specific-configuration" tabindex="-1"><a class="header-anchor" href="#environment-specific-configuration">Environment-Specific Configuration</a></h2>
+<h3 id="development" tabindex="-1"><a class="header-anchor" href="#development">Development</a></h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"environment"</span><span class="token operator">:</span> <span class="token string">"development"</span><span class="token punctuation">,</span>
+  <span class="token property">"debug"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"logLevel"</span><span class="token operator">:</span> <span class="token string">"debug"</span><span class="token punctuation">,</span>
+  <span class="token property">"hotReload"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="production" tabindex="-1"><a class="header-anchor" href="#production">Production</a></h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"environment"</span><span class="token operator">:</span> <span class="token string">"production"</span><span class="token punctuation">,</span>
+  <span class="token property">"debug"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"logLevel"</span><span class="token operator">:</span> <span class="token string">"error"</span><span class="token punctuation">,</span>
+  <span class="token property">"compression"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"caching"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="validation" tabindex="-1"><a class="header-anchor" href="#validation">Validation</a></h2>
+<p>Validate your configuration:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Check configuration</span>
+<span class="token function">npm</span> run config:check
+
+<span class="token comment"># Validate environment</span>
+<span class="token function">npm</span> run config:validate</code></pre>
+<h2 id="best-practices" tabindex="-1"><a class="header-anchor" href="#best-practices">Best Practices</a></h2>
+<div class="markdown-alert markdown-alert-tip">
+                    <p class="markdown-alert-title">💡 Tip</p>
+<ul>
+<li>Never commit sensitive data (API keys, passwords) to version control</li>
+<li>Use environment variables for secrets</li>
+<li>Keep separate configs for different environments</li>
+<li>Document all configuration options</li>
+</ul>
+</div>
+<div class="markdown-alert markdown-alert-warning">
+                    <p class="markdown-alert-title">⚠️ Warning</p>
+<p>Always use strong, unique values for <code>SECRET_KEY</code> in production</p>
+</div>
+<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">Next Steps</a></h2>
+<ul>
+<li><a href="/docs-template/docs/User-Guide/Basic-Usage/">Learn basic usage</a></li>
+<li><a href="/docs-template/docs/User-Guide/Advanced-Features/">Explore advanced features</a></li>
+</ul>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.631Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

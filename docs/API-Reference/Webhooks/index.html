@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhooks</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>Webhooks</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="webhooks" tabindex="-1"><a class="header-anchor" href="#webhooks">Webhooks</a></h1>
+<p>Configure webhooks to receive real-time notifications about events.</p>
+<h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview">Overview</a></h2>
+<p>Webhooks allow your application to receive HTTP notifications when specific events occur.</p>
+<h2 id="creating-webhooks" tabindex="-1"><a class="header-anchor" href="#creating-webhooks">Creating Webhooks</a></h2>
+<h3 id="via-api" tabindex="-1"><a class="header-anchor" href="#via-api">Via API</a></h3>
+<pre class="language-http"><code class="language-http">POST /v1/webhooks</code></pre>
+<p><strong>Request Body:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://yourapp.com/webhook"</span><span class="token punctuation">,</span>
+  <span class="token property">"events"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"user.created"</span><span class="token punctuation">,</span>
+    <span class="token string">"user.updated"</span><span class="token punctuation">,</span>
+    <span class="token string">"project.created"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"whsec_abc123..."</span><span class="token punctuation">,</span>
+  <span class="token property">"active"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"hook_123"</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://yourapp.com/webhook"</span><span class="token punctuation">,</span>
+  <span class="token property">"events"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"user.created"</span><span class="token punctuation">,</span> <span class="token string">"user.updated"</span><span class="token punctuation">,</span> <span class="token string">"project.created"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"whsec_abc123..."</span><span class="token punctuation">,</span>
+  <span class="token property">"active"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T12:00:00Z"</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="available-events" tabindex="-1"><a class="header-anchor" href="#available-events">Available Events</a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user.created</code></td>
+<td>New user registered</td>
+</tr>
+<tr>
+<td><code>user.updated</code></td>
+<td>User profile updated</td>
+</tr>
+<tr>
+<td><code>user.deleted</code></td>
+<td>User account deleted</td>
+</tr>
+<tr>
+<td><code>project.created</code></td>
+<td>New project created</td>
+</tr>
+<tr>
+<td><code>project.updated</code></td>
+<td>Project modified</td>
+</tr>
+<tr>
+<td><code>project.deleted</code></td>
+<td>Project deleted</td>
+</tr>
+<tr>
+<td><code>file.uploaded</code></td>
+<td>File uploaded</td>
+</tr>
+<tr>
+<td><code>payment.succeeded</code></td>
+<td>Payment processed successfully</td>
+</tr>
+<tr>
+<td><code>payment.failed</code></td>
+<td>Payment failed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="webhook-payload" tabindex="-1"><a class="header-anchor" href="#webhook-payload">Webhook Payload</a></h2>
+<h3 id="standard-format" tabindex="-1"><a class="header-anchor" href="#standard-format">Standard Format</a></h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"evt_abc123"</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"user.created"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T12:30:00Z"</span><span class="token punctuation">,</span>
+  <span class="token property">"data"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_123"</span><span class="token punctuation">,</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"John Doe"</span><span class="token punctuation">,</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"john@example.com"</span><span class="token punctuation">,</span>
+    <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"active"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="verifying-webhooks" tabindex="-1"><a class="header-anchor" href="#verifying-webhooks">Verifying Webhooks</a></h2>
+<h3 id="signature-verification" tabindex="-1"><a class="header-anchor" href="#signature-verification">Signature Verification</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">verifyWebhook</span><span class="token punctuation">(</span><span class="token parameter">payload<span class="token punctuation">,</span> signature<span class="token punctuation">,</span> secret</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> hmac <span class="token operator">=</span> crypto
+    <span class="token punctuation">.</span><span class="token function">createHmac</span><span class="token punctuation">(</span><span class="token string">'sha256'</span><span class="token punctuation">,</span> secret<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> crypto<span class="token punctuation">.</span><span class="token function">timingSafeEqual</span><span class="token punctuation">(</span>
+    Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>signature<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>hmac<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Express middleware</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> signature <span class="token operator">=</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'x-webhook-signature'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> payload <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">verifyWebhook</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> signature<span class="token punctuation">,</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">WEBHOOK_SECRET</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">401</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'Invalid signature'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// Process webhook</span>
+  <span class="token function">processWebhook</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'OK'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="handling-webhooks" tabindex="-1"><a class="header-anchor" href="#handling-webhooks">Handling Webhooks</a></h2>
+<h3 id="nodejs-example" tabindex="-1"><a class="header-anchor" href="#nodejs-example">Node.js Example</a></h3>
+<pre class="language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> event <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  
+  <span class="token comment">// Respond quickly</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'OK'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Process asynchronously</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'user.created'</span><span class="token operator">:</span>
+        <span class="token keyword">await</span> <span class="token function">handleUserCreated</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">'user.updated'</span><span class="token operator">:</span>
+        <span class="token keyword">await</span> <span class="token function">handleUserUpdated</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">'project.created'</span><span class="token operator">:</span>
+        <span class="token keyword">await</span> <span class="token function">handleProjectCreated</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Unhandled event:'</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Webhook processing error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="python-example" tabindex="-1"><a class="header-anchor" href="#python-example">Python Example</a></h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request
+<span class="token keyword">import</span> hmac
+<span class="token keyword">import</span> hashlib
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/webhook'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">webhook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Verify signature</span>
+    signature <span class="token operator">=</span> request<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'X-Webhook-Signature'</span><span class="token punctuation">)</span>
+    payload <span class="token operator">=</span> request<span class="token punctuation">.</span>get_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    expected <span class="token operator">=</span> hmac<span class="token punctuation">.</span>new<span class="token punctuation">(</span>
+        WEBHOOK_SECRET<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">,</span>
+        hashlib<span class="token punctuation">.</span>sha256
+    <span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">if</span> <span class="token keyword">not</span> hmac<span class="token punctuation">.</span>compare_digest<span class="token punctuation">(</span>signature<span class="token punctuation">,</span> expected<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Invalid signature'</span><span class="token punctuation">,</span> <span class="token number">401</span>
+    
+    <span class="token comment"># Process event</span>
+    event <span class="token operator">=</span> request<span class="token punctuation">.</span>json
+    handle_event<span class="token punctuation">(</span>event<span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token string">'OK'</span><span class="token punctuation">,</span> <span class="token number">200</span></code></pre>
+<h2 id="retry-logic" tabindex="-1"><a class="header-anchor" href="#retry-logic">Retry Logic</a></h2>
+<p>Our system automatically retries failed webhook deliveries:</p>
+<table>
+<thead>
+<tr>
+<th>Attempt</th>
+<th>Delay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>2</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5 minutes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>30 minutes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2 hours</td>
+</tr>
+</tbody>
+</table>
+<p>After 5 failed attempts, the webhook is marked as failed and stops retrying.</p>
+<h2 id="best-practices" tabindex="-1"><a class="header-anchor" href="#best-practices">Best Practices</a></h2>
+<h3 id="dos" tabindex="-1"><a class="header-anchor" href="#dos">Do’s ✅</a></h3>
+<ul>
+<li>Respond with 200 status quickly</li>
+<li>Process webhooks asynchronously</li>
+<li>Verify webhook signatures</li>
+<li>Use HTTPS endpoints</li>
+<li>Implement idempotency</li>
+<li>Log all webhook events</li>
+</ul>
+<h3 id="donts" tabindex="-1"><a class="header-anchor" href="#donts">Don’ts ❌</a></h3>
+<ul>
+<li>Don’t process webhooks synchronously</li>
+<li>Don’t expose webhook endpoints without authentication</li>
+<li>Don’t ignore retry deliveries</li>
+<li>Don’t rely on webhook ordering</li>
+</ul>
+<h2 id="testing-webhooks" tabindex="-1"><a class="header-anchor" href="#testing-webhooks">Testing Webhooks</a></h2>
+<h3 id="using-cli" tabindex="-1"><a class="header-anchor" href="#using-cli">Using CLI</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Send test webhook</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST https://api.example.com/v1/webhooks/hook_123/test</code></pre>
+<h3 id="manual-testing" tabindex="-1"><a class="header-anchor" href="#manual-testing">Manual Testing</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Simulate webhook locally</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http://localhost:3000/webhook <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"X-Webhook-Signature: test_signature"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">'{
+    "id": "evt_test",
+    "type": "user.created",
+    "data": {
+      "id": "user_test",
+      "name": "Test User"
+    }
+  }'</span></code></pre>
+<h2 id="monitoring" tabindex="-1"><a class="header-anchor" href="#monitoring">Monitoring</a></h2>
+<h3 id="view-webhook-logs" tabindex="-1"><a class="header-anchor" href="#view-webhook-logs">View Webhook Logs</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/webhooks/:id/deliveries</code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"deliveries"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"del_123"</span><span class="token punctuation">,</span>
+      <span class="token property">"event_id"</span><span class="token operator">:</span> <span class="token string">"evt_abc"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"success"</span><span class="token punctuation">,</span>
+      <span class="token property">"status_code"</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token property">"attempts"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">"delivered_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T12:30:00Z"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"del_124"</span><span class="token punctuation">,</span>
+      <span class="token property">"event_id"</span><span class="token operator">:</span> <span class="token string">"evt_def"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"failed"</span><span class="token punctuation">,</span>
+      <span class="token property">"status_code"</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+      <span class="token property">"attempts"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">"error"</span><span class="token operator">:</span> <span class="token string">"Connection timeout"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="troubleshooting" tabindex="-1"><a class="header-anchor" href="#troubleshooting">Troubleshooting</a></h2>
+<h3 id="webhooks-not-received" tabindex="-1"><a class="header-anchor" href="#webhooks-not-received">Webhooks Not Received</a></h3>
+<ol>
+<li>Check webhook URL is accessible</li>
+<li>Verify HTTPS certificate is valid</li>
+<li>Ensure endpoint responds with 200</li>
+<li>Check webhook is active</li>
+<li>Review delivery logs</li>
+</ol>
+<h3 id="signature-verification-fails" tabindex="-1"><a class="header-anchor" href="#signature-verification-fails">Signature Verification Fails</a></h3>
+<ol>
+<li>Verify secret key matches</li>
+<li>Check payload encoding</li>
+<li>Ensure raw body is used</li>
+<li>Compare hash algorithms</li>
+</ol>
+<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">Next Steps</a></h2>
+<ul>
+<li><a href="/docs-template/docs/API-Reference/Endpoints/">View API endpoints</a></li>
+<li><a href="/docs-template/docs/API-Reference/Authentication/">Check authentication guide</a></li>
+</ul>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.631Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

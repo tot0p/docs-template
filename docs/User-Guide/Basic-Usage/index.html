@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Usage</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>Basic Usage</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="basic-usage" tabindex="-1"><a class="header-anchor" href="#basic-usage">Basic Usage</a></h1>
+<p>Learn the fundamental operations and everyday tasks.</p>
+<h2 id="getting-started" tabindex="-1"><a class="header-anchor" href="#getting-started">Getting Started</a></h2>
+<h3 id="starting-the-application" tabindex="-1"><a class="header-anchor" href="#starting-the-application">Starting the Application</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Development mode</span>
+<span class="token function">npm</span> run dev
+
+<span class="token comment"># Production mode</span>
+<span class="token function">npm</span> start
+
+<span class="token comment"># With custom port</span>
+<span class="token assign-left variable">PORT</span><span class="token operator">=</span><span class="token number">8080</span> <span class="token function">npm</span> start</code></pre>
+<h3 id="basic-commands" tabindex="-1"><a class="header-anchor" href="#basic-commands">Basic Commands</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Check version</span>
+your-app <span class="token parameter variable">--version</span>
+
+<span class="token comment"># Get help</span>
+your-app <span class="token parameter variable">--help</span>
+
+<span class="token comment"># Run with options</span>
+your-app <span class="token parameter variable">--port</span> <span class="token number">3000</span> <span class="token parameter variable">--host</span> localhost</code></pre>
+<h2 id="common-operations" tabindex="-1"><a class="header-anchor" href="#common-operations">Common Operations</a></h2>
+<h3 id="creating-items" tabindex="-1"><a class="header-anchor" href="#creating-items">Creating Items</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Create a new item</span>
+<span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Example Item'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">'This is an example'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">category</span><span class="token operator">:</span> <span class="token string">'documentation'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Save the item</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">create</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Created:'</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="reading-items" tabindex="-1"><a class="header-anchor" href="#reading-items">Reading Items</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Get single item</span>
+<span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getById</span><span class="token punctuation">(</span><span class="token string">'item-id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get all items</span>
+<span class="token keyword">const</span> allItems <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get with filters</span>
+<span class="token keyword">const</span> filtered <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">category</span><span class="token operator">:</span> <span class="token string">'documentation'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token string">'active'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="updating-items" tabindex="-1"><a class="header-anchor" href="#updating-items">Updating Items</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Update item</span>
+<span class="token keyword">const</span> updated <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'item-id'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Updated Name'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">'Updated description'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Partial update</span>
+<span class="token keyword">const</span> patched <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">patch</span><span class="token punctuation">(</span><span class="token string">'item-id'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token string">'completed'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="deleting-items" tabindex="-1"><a class="header-anchor" href="#deleting-items">Deleting Items</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Delete single item</span>
+<span class="token keyword">await</span> <span class="token keyword">delete</span><span class="token punctuation">(</span><span class="token string">'item-id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Delete multiple items</span>
+<span class="token keyword">await</span> <span class="token function">deleteMany</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'id1'</span><span class="token punctuation">,</span> <span class="token string">'id2'</span><span class="token punctuation">,</span> <span class="token string">'id3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Soft delete (if supported)</span>
+<span class="token keyword">await</span> <span class="token function">softDelete</span><span class="token punctuation">(</span><span class="token string">'item-id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="working-with-files" tabindex="-1"><a class="header-anchor" href="#working-with-files">Working with Files</a></h2>
+<h3 id="reading-files" tabindex="-1"><a class="header-anchor" href="#reading-files">Reading Files</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Read file</span>
+<span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'path/to/file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Read JSON</span>
+<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readJSON</span><span class="token punctuation">(</span><span class="token string">'data.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Read with options</span>
+<span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">encoding</span><span class="token operator">:</span> <span class="token string">'utf8'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="writing-files" tabindex="-1"><a class="header-anchor" href="#writing-files">Writing Files</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Write file</span>
+<span class="token keyword">await</span> <span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">'output.txt'</span><span class="token punctuation">,</span> <span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Write JSON</span>
+<span class="token keyword">await</span> <span class="token function">writeJSON</span><span class="token punctuation">(</span><span class="token string">'data.json'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'value'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Append to file</span>
+<span class="token keyword">await</span> <span class="token function">appendFile</span><span class="token punctuation">(</span><span class="token string">'log.txt'</span><span class="token punctuation">,</span> <span class="token string">'New log entry\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="authentication" tabindex="-1"><a class="header-anchor" href="#authentication">Authentication</a></h2>
+<h3 id="login" tabindex="-1"><a class="header-anchor" href="#login">Login</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Login with credentials</span>
+<span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'user@example.com'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">'password123'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Save token</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">,</span> user<span class="token punctuation">.</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="making-authenticated-requests" tabindex="-1"><a class="header-anchor" href="#making-authenticated-requests">Making Authenticated Requests</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Get token</span>
+<span class="token keyword">const</span> token <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Include in requests</span>
+<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/api/protected'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'Authorization'</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>token<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="logout" tabindex="-1"><a class="header-anchor" href="#logout">Logout</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Logout</span>
+<span class="token keyword">await</span> <span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Clear token</span>
+localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="error-handling" tabindex="-1"><a class="header-anchor" href="#error-handling">Error Handling</a></h2>
+<h3 id="try-catch-pattern" tabindex="-1"><a class="header-anchor" href="#try-catch-pattern">Try-Catch Pattern</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Success:'</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Handle specific errors</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token string">'NOT_FOUND'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Item not found'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token string">'UNAUTHORIZED'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Please login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="validation" tabindex="-1"><a class="header-anchor" href="#validation">Validation</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Validate before operation</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isValid</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Invalid data'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Use validation library</span>
+<span class="token keyword">const</span> errors <span class="token operator">=</span> <span class="token function">validate</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>errors<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Validation errors:'</span><span class="token punctuation">,</span> errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="best-practices" tabindex="-1"><a class="header-anchor" href="#best-practices">Best Practices</a></h2>
+<h3 id="dos" tabindex="-1"><a class="header-anchor" href="#dos">Do’s ✅</a></h3>
+<ul>
+<li>Always validate user input</li>
+<li>Handle errors gracefully</li>
+<li>Use async/await for cleaner code</li>
+<li>Log important operations</li>
+<li>Close resources when done</li>
+</ul>
+<h3 id="donts" tabindex="-1"><a class="header-anchor" href="#donts">Don’ts ❌</a></h3>
+<ul>
+<li>Don’t ignore errors</li>
+<li>Don’t hardcode sensitive data</li>
+<li>Don’t skip validation</li>
+<li>Don’t leave resources open</li>
+<li>Don’t use synchronous operations for I/O</li>
+</ul>
+<h2 id="cli-examples" tabindex="-1"><a class="header-anchor" href="#cli-examples">CLI Examples</a></h2>
+<h3 id="basic-commands-1" tabindex="-1"><a class="header-anchor" href="#basic-commands-1">Basic Commands</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Create new item</span>
+your-app create <span class="token parameter variable">--name</span> <span class="token string">"My Item"</span> <span class="token parameter variable">--type</span> document
+
+<span class="token comment"># List items</span>
+your-app list
+
+<span class="token comment"># Show item details</span>
+your-app show item-id
+
+<span class="token comment"># Update item</span>
+your-app update item-id <span class="token parameter variable">--status</span> completed
+
+<span class="token comment"># Delete item</span>
+your-app delete item-id</code></pre>
+<h3 id="advanced-usage" tabindex="-1"><a class="header-anchor" href="#advanced-usage">Advanced Usage</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Batch operations</span>
+your-app batch-create items.json
+
+<span class="token comment"># Export data</span>
+your-app <span class="token builtin class-name">export</span> <span class="token parameter variable">--format</span> json <span class="token parameter variable">--output</span> data.json
+
+<span class="token comment"># Import data</span>
+your-app <span class="token function">import</span> data.json
+
+<span class="token comment"># Search</span>
+your-app search <span class="token string">"keyword"</span> <span class="token parameter variable">--category</span> docs</code></pre>
+<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">Next Steps</a></h2>
+<ul>
+<li><a href="/docs-template/docs/User-Guide/Advanced-Features/">Explore advanced features</a></li>
+<li><a href="/docs-template/docs/API-Reference/Endpoints/">Learn about API endpoints</a></li>
+</ul>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.631Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

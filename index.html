@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Template</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="hero">
+  <h1>Documentation Template</h1>
+  <p>A simple, fast, and customizable documentation site template built with Eleventy (11ty).</p>
+</div>
+<div class="content-grid">
+  <div class="card">
+    <h3>📖 Getting Started</h3>
+    <p>Learn how to use this template to create your own documentation site.</p>
+    <ul>
+      <li><a href="/docs-template/docs/Getting-Started/">Complete Guide & Examples</a></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>⚡ Quick Start</h3>
+    <p>Get up and running in minutes.</p>
+    <ol>
+      <li>Run <code>npm install</code></li>
+      <li>Run <code>npm start</code></li>
+      <li>Create .md files in <code>assets/docs/</code></li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>✨ Features</h3>
+    <p>What this template includes:</p>
+    <ul>
+      <li>📝 Markdown-based content</li>
+      <li>🔍 Built-in search</li>
+      <li>📱 Responsive design</li>
+      <li>⚡ Fast static generation</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>📚 Documentation</h3>
+    <p>Everything you need to know:</p>
+    <ul>
+      <li>Project structure</li>
+      <li>Creating pages</li>
+      <li>Configuration</li>
+      <li>Examples & best practices</li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

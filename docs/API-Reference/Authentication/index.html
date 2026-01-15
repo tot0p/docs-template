@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>Authentication</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="authentication" tabindex="-1"><a class="header-anchor" href="#authentication">Authentication</a></h1>
+<p>Learn how to authenticate with the API.</p>
+<h2 id="api-keys" tabindex="-1"><a class="header-anchor" href="#api-keys">API Keys</a></h2>
+<h3 id="generating-api-keys" tabindex="-1"><a class="header-anchor" href="#generating-api-keys">Generating API Keys</a></h3>
+<ol>
+<li>Log in to your dashboard</li>
+<li>Navigate to Settings → API Keys</li>
+<li>Click “Create New API Key”</li>
+<li>Copy and securely store your key</li>
+</ol>
+<div class="markdown-alert markdown-alert-warning">
+                    <p class="markdown-alert-title">⚠️ Warning</p>
+<p>API keys grant full access to your account. Keep them secure and never commit them to version control.</p>
+</div>
+<h2 id="authentication-methods" tabindex="-1"><a class="header-anchor" href="#authentication-methods">Authentication Methods</a></h2>
+<h3 id="bearer-token" tabindex="-1"><a class="header-anchor" href="#bearer-token">Bearer Token</a></h3>
+<p>Include your API key in the Authorization header:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer sk_live_abc123..."</span> <span class="token punctuation">\</span>
+  https://api.example.com/v1/users</code></pre>
+<h3 id="request-example" tabindex="-1"><a class="header-anchor" href="#request-example">Request Example</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://api.example.com/v1/users'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'Authorization'</span><span class="token operator">:</span> <span class="token string">'Bearer sk_live_abc123...'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="oauth-20" tabindex="-1"><a class="header-anchor" href="#oauth-20">OAuth 2.0</a></h2>
+<h3 id="authorization-flow" tabindex="-1"><a class="header-anchor" href="#authorization-flow">Authorization Flow</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Step 1: Redirect user to authorization URL</span>
+https://api.example.com/oauth/authorize?
+  <span class="token assign-left variable">client_id</span><span class="token operator">=</span>YOUR_CLIENT_ID<span class="token operator">&amp;</span>
+  <span class="token assign-left variable">redirect_uri</span><span class="token operator">=</span>https://yourapp.com/callback<span class="token operator">&amp;</span>
+  <span class="token assign-left variable">response_type</span><span class="token operator">=</span>code<span class="token operator">&amp;</span>
+  <span class="token assign-left variable">scope</span><span class="token operator">=</span>read <span class="token function">write</span>
+
+<span class="token comment"># Step 2: Exchange code for token</span>
+POST /oauth/token
+<span class="token punctuation">{</span>
+  <span class="token string">"client_id"</span><span class="token builtin class-name">:</span> <span class="token string">"YOUR_CLIENT_ID"</span>,
+  <span class="token string">"client_secret"</span><span class="token builtin class-name">:</span> <span class="token string">"YOUR_SECRET"</span>,
+  <span class="token string">"code"</span><span class="token builtin class-name">:</span> <span class="token string">"AUTHORIZATION_CODE"</span>,
+  <span class="token string">"grant_type"</span><span class="token builtin class-name">:</span> <span class="token string">"authorization_code"</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="token-response" tabindex="-1"><a class="header-anchor" href="#token-response">Token Response</a></h3>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"access_token"</span><span class="token operator">:</span> <span class="token string">"eyJhbGciOiJIUzI1NiIs..."</span><span class="token punctuation">,</span>
+  <span class="token property">"token_type"</span><span class="token operator">:</span> <span class="token string">"Bearer"</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in"</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+  <span class="token property">"refresh_token"</span><span class="token operator">:</span> <span class="token string">"def502003e8f2b..."</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="security-best-practices" tabindex="-1"><a class="header-anchor" href="#security-best-practices">Security Best Practices</a></h2>
+<ul>
+<li>Rotate API keys regularly</li>
+<li>Use environment variables for keys</li>
+<li>Implement token expiration</li>
+<li>Monitor API usage for anomalies</li>
+<li>Use HTTPS for all requests</li>
+</ul>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.631Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

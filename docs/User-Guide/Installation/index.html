@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>Installation Guide</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="installation-guide" tabindex="-1"><a class="header-anchor" href="#installation-guide">Installation Guide</a></h1>
+<p>This guide walks you through the installation process step by step.</p>
+<h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites">Prerequisites</a></h2>
+<p>Before you begin, ensure you have:</p>
+<ul>
+<li>Node.js (v14 or higher)</li>
+<li>npm or yarn package manager</li>
+<li>Git (optional, for cloning)</li>
+<li>Text editor (VS Code, Sublime, etc.)</li>
+</ul>
+<h2 id="installation-methods" tabindex="-1"><a class="header-anchor" href="#installation-methods">Installation Methods</a></h2>
+<h3 id="method-1-using-npm" tabindex="-1"><a class="header-anchor" href="#method-1-using-npm">Method 1: Using npm</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Install globally</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> your-package
+
+<span class="token comment"># Verify installation</span>
+your-package <span class="token parameter variable">--version</span></code></pre>
+<h3 id="method-2-local-installation" tabindex="-1"><a class="header-anchor" href="#method-2-local-installation">Method 2: Local Installation</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Create project directory</span>
+<span class="token function">mkdir</span> my-project
+<span class="token builtin class-name">cd</span> my-project
+
+<span class="token comment"># Initialize project</span>
+<span class="token function">npm</span> init <span class="token parameter variable">-y</span>
+
+<span class="token comment"># Install as dependency</span>
+<span class="token function">npm</span> <span class="token function">install</span> your-package
+
+<span class="token comment"># Install dev dependencies</span>
+<span class="token function">npm</span> <span class="token function">install</span> --save-dev your-dev-package</code></pre>
+<h3 id="method-3-clone-from-repository" tabindex="-1"><a class="header-anchor" href="#method-3-clone-from-repository">Method 3: Clone from Repository</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Clone repository</span>
+<span class="token function">git</span> clone https://github.com/username/repo.git
+
+<span class="token comment"># Navigate to directory</span>
+<span class="token builtin class-name">cd</span> repo
+
+<span class="token comment"># Install dependencies</span>
+<span class="token function">npm</span> <span class="token function">install</span></code></pre>
+<h2 id="platform-specific-instructions" tabindex="-1"><a class="header-anchor" href="#platform-specific-instructions">Platform-Specific Instructions</a></h2>
+<h3 id="windows" tabindex="-1"><a class="header-anchor" href="#windows">Windows</a></h3>
+<pre class="language-powershell"><code class="language-powershell"><span class="token comment"># Using PowerShell</span>
+npm install <span class="token operator">-</span>g your-package
+
+<span class="token comment"># Verify installation</span>
+<span class="token function">Get-Command</span> your-package</code></pre>
+<h3 id="macos-linux" tabindex="-1"><a class="header-anchor" href="#macos-linux">macOS / Linux</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># May require sudo</span>
+<span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> your-package
+
+<span class="token comment"># Verify installation</span>
+<span class="token function">which</span> your-package</code></pre>
+<h2 id="post-installation" tabindex="-1"><a class="header-anchor" href="#post-installation">Post-Installation</a></h2>
+<p>After installation, run the setup:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Run setup wizard</span>
+your-package setup
+
+<span class="token comment"># Verify configuration</span>
+your-package doctor</code></pre>
+<h2 id="troubleshooting" tabindex="-1"><a class="header-anchor" href="#troubleshooting">Troubleshooting</a></h2>
+<h3 id="common-issues" tabindex="-1"><a class="header-anchor" href="#common-issues">Common Issues</a></h3>
+<p><strong>Issue:</strong> Permission denied errors</p>
+<p><strong>Solution:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># On macOS/Linux</span>
+<span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> your-package
+
+<span class="token comment"># Or use nvm to avoid sudo</span></code></pre>
+<p><strong>Issue:</strong> Command not found</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Ensure npm global bin is in your PATH</li>
+<li>Restart your terminal</li>
+<li>Verify installation with <code>npm list -g</code></li>
+</ul>
+<h2 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps">Next Steps</a></h2>
+<ul>
+<li><a href="/docs-template/docs/User-Guide/Configuration/">Configure your environment</a></li>
+<li><a href="/docs-template/docs/User-Guide/Basic-Usage/">Learn basic usage</a></li>
+<li><a href="/docs-template/docs/User-Guide/Advanced-Features/">Explore advanced features</a></li>
+</ul>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.632Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>

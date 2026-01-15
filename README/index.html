@@ -1,0 +1,160 @@
+<h1 id="documentation-template" tabindex="-1"><a class="header-anchor" href="#documentation-template">Documentation Template</a></h1>
+<p>A simple, fast, and customizable documentation site template built with <a href="https://www.11ty.dev/">Eleventy (11ty)</a>.</p>
+<h2 id="features" tabindex="-1"><a class="header-anchor" href="#features">✨ Features</a></h2>
+<ul>
+<li>📝 Markdown-based content</li>
+<li>🎨 Clean, responsive design</li>
+<li>🔍 Built-in search functionality</li>
+<li>📱 Mobile-friendly navigation</li>
+<li>⚡ Fast static site generation</li>
+<li>🌙 Dark mode support</li>
+<li>🚀 Automatic deployment to GitHub Pages</li>
+</ul>
+<h2 id="quick-start" tabindex="-1"><a class="header-anchor" href="#quick-start">🚀 Quick Start</a></h2>
+<h3 id="local-development" tabindex="-1"><a class="header-anchor" href="#local-development">Local Development</a></h3>
+<ol>
+<li>
+<p><strong>Install dependencies</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span></code></pre>
+</li>
+<li>
+<p><strong>Start development server</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> start</code></pre>
+</li>
+<li>
+<p><strong>Open in browser</strong><br>
+Navigate to <code>http://localhost:8080</code></p>
+</li>
+</ol>
+<h3 id="creating-documentation" tabindex="-1"><a class="header-anchor" href="#creating-documentation">Creating Documentation</a></h3>
+<ol>
+<li>Create markdown files in <code>assets/docs/</code></li>
+<li>Add front matter with title</li>
+<li>Write your content</li>
+<li>The page is automatically generated</li>
+</ol>
+<p>Example:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">layout: doc.njk
+title: "My Page"</span>
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> My Documentation</span>
+
+Your content here...</code></pre>
+<h2 id="project-structure" tabindex="-1"><a class="header-anchor" href="#project-structure">📁 Project Structure</a></h2>
+<pre><code>docs-template/
+├── assets/
+│   └── docs/              # Your markdown documentation files
+├── _includes/             # Layout templates
+├── _data/                 # Data files (navigation, etc.)
+├── src/
+│   ├── css/              # Stylesheets
+│   └── js/               # JavaScript files
+├── _site/                # Generated site (after build)
+├── .github/
+│   └── workflows/        # GitHub Actions workflows
+├── index.md              # Homepage
+└── package.json          # Dependencies and scripts
+</code></pre>
+<h2 id="deploying-to-github-pages" tabindex="-1"><a class="header-anchor" href="#deploying-to-github-pages">🌐 Deploying to GitHub Pages</a></h2>
+<h3 id="automatic-deployment-recommended" tabindex="-1"><a class="header-anchor" href="#automatic-deployment-recommended">Automatic Deployment (Recommended)</a></h3>
+<p>This template is configured for automatic deployment to GitHub Pages:</p>
+<ol>
+<li>
+<p><strong>Enable GitHub Pages</strong></p>
+<ul>
+<li>Go to your repository settings</li>
+<li>Navigate to “Pages” section</li>
+<li>Under “Build and deployment”:
+<ul>
+<li>Source: Select “GitHub Actions”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Push to main/master branch</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Your message"</span>
+<span class="token function">git</span> push</code></pre>
+</li>
+<li>
+<p><strong>Site will be automatically deployed</strong></p>
+<ul>
+<li>The workflow will build and deploy your site</li>
+<li>Your site will be available at: <code>https://username.github.io/repository-name/</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="using-as-a-template" tabindex="-1"><a class="header-anchor" href="#using-as-a-template">Using as a Template</a></h3>
+<p>If this repository is a template:</p>
+<ol>
+<li>Click “Use this template” button</li>
+<li>Create your new repository</li>
+<li>Clone and customize your content</li>
+<li>Enable GitHub Pages in settings (Source: GitHub Actions)</li>
+<li>Push to main branch</li>
+<li>Your documentation site is ready!</li>
+</ol>
+<h2 id="available-commands" tabindex="-1"><a class="header-anchor" href="#available-commands">📝 Available Commands</a></h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Start development server with live reload</span>
+<span class="token function">npm</span> start
+
+<span class="token comment"># Build for production</span>
+<span class="token function">npm</span> run build
+
+<span class="token comment"># Serve built site locally</span>
+<span class="token function">npm</span> run serve</code></pre>
+<h2 id="configuration" tabindex="-1"><a class="header-anchor" href="#configuration">⚙️ Configuration</a></h2>
+<h3 id="navigation-menu" tabindex="-1"><a class="header-anchor" href="#navigation-menu">Navigation Menu</a></h3>
+<p>Edit <code>_data/navigation.js</code> to customize the menu:</p>
+<pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Getting Started"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"/docs/Getting-Started/"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"User Guide"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Installation"</span><span class="token punctuation">,</span> <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"/docs/User-Guide/Installation/"</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<h3 id="site-title" tabindex="-1"><a class="header-anchor" href="#site-title">Site Title</a></h3>
+<p>Edit <code>_includes/base.njk</code> to change the site title and branding.</p>
+<h3 id="styling" tabindex="-1"><a class="header-anchor" href="#styling">Styling</a></h3>
+<p>Customize styles in <code>src/css/style.css</code>.</p>
+<h2 id="documentation" tabindex="-1"><a class="header-anchor" href="#documentation">📚 Documentation</a></h2>
+<p>For detailed usage instructions and examples, see the <a href="assets/docs/Getting-Started.md">Getting Started Guide</a> or visit your deployed site.</p>
+<h2 id="troubleshooting" tabindex="-1"><a class="header-anchor" href="#troubleshooting">🔧 Troubleshooting</a></h2>
+<h3 id="404-errors-on-github-pages" tabindex="-1"><a class="header-anchor" href="#404-errors-on-github-pages">404 Errors on GitHub Pages</a></h3>
+<p>Make sure:</p>
+<ul>
+<li>GitHub Pages is enabled in repository settings</li>
+<li>Source is set to “GitHub Actions”</li>
+<li>The workflow has run successfully</li>
+<li>You’re using the correct URL format</li>
+<li>All links use the <code>| url</code> filter in templates</li>
+</ul>
+<h3 id="build-fails" tabindex="-1"><a class="header-anchor" href="#build-fails">Build Fails</a></h3>
+<ol>
+<li>Delete <code>node_modules</code> and <code>package-lock.json</code></li>
+<li>Run <code>npm install</code></li>
+<li>Try building again with <code>npm run build</code></li>
+</ol>
+<h2 id="license" tabindex="-1"><a class="header-anchor" href="#license">📄 License</a></h2>
+<p>MIT License - feel free to use this template for your projects!</p>
+<h2 id="contributing" tabindex="-1"><a class="header-anchor" href="#contributing">🤝 Contributing</a></h2>
+<p>Contributions are welcome! Feel free to:</p>
+<ul>
+<li>Report bugs</li>
+<li>Suggest features</li>
+<li>Submit pull requests</li>
+</ul>
+<h2 id="support" tabindex="-1"><a class="header-anchor" href="#support">📞 Support</a></h2>
+<ul>
+<li>Check the <a href="assets/docs/Getting-Started.md">documentation</a></li>
+<li>Open an issue on GitHub</li>
+<li>Review <a href="https://www.11ty.dev/docs/">Eleventy documentation</a></li>
+</ul>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Endpoints</title>
+    <script>
+        window.SITE_PATH_PREFIX = '/docs-template/'.replace(/\/$/, '');
+    </script>
+    <link rel="stylesheet" href="/docs-template/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/docs-template/" class="logo">
+                    <h2>📖 docs-template</h2>
+                </a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+            </div>
+            
+            <div class="nav-content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Rechercher dans les docs..." aria-label="Search documentation">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <!-- Home Link -->
+                <a href="/docs-template/" class="nav-item ">
+                    <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                
+                <!-- Dynamic Navigation -->
+                
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Documentation</h3>
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        Api Reference
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Authentication/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Authentication
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Endpoints/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Endpoints
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/API-Reference/Webhooks/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Webhooks
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <div class="nav-dropdown">
+                                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                                        <span class="nav-icon">📁</span>
+                                        User Guide
+                                        <span class="dropdown-arrow">▶</span>
+                                    </button>
+                                    <div class="nav-dropdown-content">
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Advanced-Features/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Advanced Features
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Basic-Usage/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Basic Usage
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Configuration/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Configuration
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Installation/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Installation
+                                                </a>
+                                            
+                                        
+                                            
+                                                <a href="/docs-template/docs/User-Guide/Overview/" class="nav-item">
+                                                    <span class="nav-icon">📄</span>
+                                                    Overview
+                                                </a>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+                            
+                                <a href="/docs-template/docs/Getting-Started/" class="nav-item">
+                                    <span class="nav-icon">📄</span>
+                                    Getting Started
+                                </a>
+                            
+                        
+                    </div>
+                
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+<article class="documentation">
+    <header class="doc-header">
+        <h1>API Endpoints</h1>
+        
+    </header>
+    
+    <div class="doc-content">
+        <h1 id="api-endpoints" tabindex="-1"><a class="header-anchor" href="#api-endpoints">API Endpoints</a></h1>
+<p>Complete reference for all available endpoints.</p>
+<h2 id="users" tabindex="-1"><a class="header-anchor" href="#users">Users</a></h2>
+<h3 id="list-users" tabindex="-1"><a class="header-anchor" href="#list-users">List Users</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/users</code></pre>
+<p><strong>Query Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>Page number (default: 1)</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td>Items per page (default: 20)</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Filter by status</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Request:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  <span class="token string">"https://api.example.com/v1/users?page=1&amp;limit=20"</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"data"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_123"</span><span class="token punctuation">,</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"John Doe"</span><span class="token punctuation">,</span>
+      <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"john@example.com"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"active"</span><span class="token punctuation">,</span>
+      <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2025-01-01T00:00:00Z"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"pagination"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"page"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">"limit"</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token property">"total"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    <span class="token property">"pages"</span><span class="token operator">:</span> <span class="token number">5</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h3 id="get-user" tabindex="-1"><a class="header-anchor" href="#get-user">Get User</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/users/:id</code></pre>
+<p><strong>Example Request:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  https://api.example.com/v1/users/user_123</code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_123"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"John Doe"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"john@example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"active"</span><span class="token punctuation">,</span>
+  <span class="token property">"metadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"plan"</span><span class="token operator">:</span> <span class="token string">"pro"</span><span class="token punctuation">,</span>
+    <span class="token property">"subscription_id"</span><span class="token operator">:</span> <span class="token string">"sub_456"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2025-01-01T00:00:00Z"</span><span class="token punctuation">,</span>
+  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"2025-01-15T10:30:00Z"</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h3 id="create-user" tabindex="-1"><a class="header-anchor" href="#create-user">Create User</a></h3>
+<pre class="language-http"><code class="language-http">POST /v1/users</code></pre>
+<p><strong>Request Body:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Jane Smith"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"jane@example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"securepassword123"</span><span class="token punctuation">,</span>
+  <span class="token property">"metadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"plan"</span><span class="token operator">:</span> <span class="token string">"free"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_124"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Jane Smith"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"jane@example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"active"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T12:00:00Z"</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h3 id="update-user" tabindex="-1"><a class="header-anchor" href="#update-user">Update User</a></h3>
+<pre class="language-http"><code class="language-http">PATCH /v1/users/:id</code></pre>
+<p><strong>Request Body:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Jane Doe"</span><span class="token punctuation">,</span>
+  <span class="token property">"metadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"plan"</span><span class="token operator">:</span> <span class="token string">"pro"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_124"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Jane Doe"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"jane@example.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"metadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"plan"</span><span class="token operator">:</span> <span class="token string">"pro"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"updated_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T13:00:00Z"</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h3 id="delete-user" tabindex="-1"><a class="header-anchor" href="#delete-user">Delete User</a></h3>
+<pre class="language-http"><code class="language-http">DELETE /v1/users/:id</code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_124"</span><span class="token punctuation">,</span>
+  <span class="token property">"deleted"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="projects" tabindex="-1"><a class="header-anchor" href="#projects">Projects</a></h2>
+<h3 id="list-projects" tabindex="-1"><a class="header-anchor" href="#list-projects">List Projects</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/projects</code></pre>
+<p><strong>Query Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>string</td>
+<td>Filter by user</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Filter by status</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>string</td>
+<td>Sort field</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>string</td>
+<td>Sort order (asc/desc)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Request:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  <span class="token string">"https://api.example.com/v1/projects?user_id=user_123&amp;status=active"</span></code></pre>
+<hr>
+<h3 id="create-project" tabindex="-1"><a class="header-anchor" href="#create-project">Create Project</a></h3>
+<pre class="language-http"><code class="language-http">POST /v1/projects</code></pre>
+<p><strong>Request Body:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"My Project"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Project description"</span><span class="token punctuation">,</span>
+  <span class="token property">"user_id"</span><span class="token operator">:</span> <span class="token string">"user_123"</span><span class="token punctuation">,</span>
+  <span class="token property">"settings"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"visibility"</span><span class="token operator">:</span> <span class="token string">"private"</span><span class="token punctuation">,</span>
+    <span class="token property">"features"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"api"</span><span class="token punctuation">,</span> <span class="token string">"webhooks"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="files" tabindex="-1"><a class="header-anchor" href="#files">Files</a></h2>
+<h3 id="upload-file" tabindex="-1"><a class="header-anchor" href="#upload-file">Upload File</a></h3>
+<pre class="language-http"><code class="language-http">POST /v1/files</code></pre>
+<p><strong>Request (multipart/form-data):</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-F</span> <span class="token string">"file=@/path/to/file.pdf"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-F</span> <span class="token string">"metadata={<span class="token entity" title="\&quot;">\"</span>category<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>document<span class="token entity" title="\&quot;">\"</span>}"</span> <span class="token punctuation">\</span>
+  https://api.example.com/v1/files</code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"file_789"</span><span class="token punctuation">,</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"file.pdf"</span><span class="token punctuation">,</span>
+  <span class="token property">"size"</span><span class="token operator">:</span> <span class="token number">1048576</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://cdn.example.com/file_789.pdf"</span><span class="token punctuation">,</span>
+  <span class="token property">"created_at"</span><span class="token operator">:</span> <span class="token string">"2026-01-15T14:00:00Z"</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h3 id="download-file" tabindex="-1"><a class="header-anchor" href="#download-file">Download File</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/files/:id/download</code></pre>
+<p><strong>Example Request:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-o</span> downloaded_file.pdf <span class="token punctuation">\</span>
+  https://api.example.com/v1/files/file_789/download</code></pre>
+<hr>
+<h2 id="search" tabindex="-1"><a class="header-anchor" href="#search">Search</a></h2>
+<h3 id="full-text-search" tabindex="-1"><a class="header-anchor" href="#full-text-search">Full-Text Search</a></h3>
+<pre class="language-http"><code class="language-http">GET /v1/search</code></pre>
+<p><strong>Query Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>string</td>
+<td>Search query (required)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>Resource type filter</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td>Results limit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Request:</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-H</span> <span class="token string">"Authorization: Bearer YOUR_KEY"</span> <span class="token punctuation">\</span>
+  <span class="token string">"https://api.example.com/v1/search?q=documentation&amp;type=project"</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"query"</span><span class="token operator">:</span> <span class="token string">"documentation"</span><span class="token punctuation">,</span>
+  <span class="token property">"results"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"project"</span><span class="token punctuation">,</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"proj_123"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Documentation Project"</span><span class="token punctuation">,</span>
+      <span class="token property">"score"</span><span class="token operator">:</span> <span class="token number">0.95</span><span class="token punctuation">,</span>
+      <span class="token property">"highlights"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"...documentation website..."</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"total"</span><span class="token operator">:</span> <span class="token number">42</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="batch-operations" tabindex="-1"><a class="header-anchor" href="#batch-operations">Batch Operations</a></h2>
+<h3 id="batch-create" tabindex="-1"><a class="header-anchor" href="#batch-create">Batch Create</a></h3>
+<pre class="language-http"><code class="language-http">POST /v1/batch/users</code></pre>
+<p><strong>Request Body:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"users"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"User 1"</span><span class="token punctuation">,</span>
+      <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"user1@example.com"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"User 2"</span><span class="token punctuation">,</span>
+      <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"user2@example.com"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"created"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token property">"failed"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">"results"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_125"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"success"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"user_126"</span><span class="token punctuation">,</span>
+      <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"success"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h2 id="error-responses" tabindex="-1"><a class="header-anchor" href="#error-responses">Error Responses</a></h2>
+<p>All endpoints may return these error formats:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"error"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"code"</span><span class="token operator">:</span> <span class="token string">"validation_error"</span><span class="token punctuation">,</span>
+    <span class="token property">"message"</span><span class="token operator">:</span> <span class="token string">"Invalid email format"</span><span class="token punctuation">,</span>
+    <span class="token property">"details"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"field"</span><span class="token operator">:</span> <span class="token string">"email"</span><span class="token punctuation">,</span>
+      <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"invalid-email"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="code-examples" tabindex="-1"><a class="header-anchor" href="#code-examples">Code Examples</a></h2>
+<h3 id="javascriptnodejs" tabindex="-1"><a class="header-anchor" href="#javascriptnodejs">JavaScript/Node.js</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> axios <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'axios'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> api <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">baseURL</span><span class="token operator">:</span> <span class="token string">'https://api.example.com/v1'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'Authorization'</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">API_KEY</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get users</span>
+<span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Create user</span>
+<span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/users'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'John Doe'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'john@example.com'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="python" tabindex="-1"><a class="header-anchor" href="#python">Python</a></h3>
+<pre class="language-python"><code class="language-python"><span class="token keyword">import</span> requests
+
+API_KEY <span class="token operator">=</span> <span class="token string">'your_api_key'</span>
+BASE_URL <span class="token operator">=</span> <span class="token string">'https://api.example.com/v1'</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'Authorization'</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f'Bearer </span><span class="token interpolation"><span class="token punctuation">{</span>API_KEY<span class="token punctuation">}</span></span><span class="token string">'</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Get users</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>BASE_URL<span class="token punctuation">}</span></span><span class="token string">/users'</span></span><span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+users <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Create user</span>
+new_user <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>
+    <span class="token string-interpolation"><span class="token string">f'</span><span class="token interpolation"><span class="token punctuation">{</span>BASE_URL<span class="token punctuation">}</span></span><span class="token string">/users'</span></span><span class="token punctuation">,</span>
+    headers<span class="token operator">=</span>headers<span class="token punctuation">,</span>
+    json<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'John Doe'</span><span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">:</span> <span class="token string">'john@example.com'</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span></code></pre>
+
+    </div>
+    
+    <footer class="doc-footer">
+        <p class="doc-meta">
+            Last updated: <time datetime="2026-01-15T11:35:08.631Z">January 15, 2026</time>
+        </p>
+    </footer>
+</article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/docs-template/js/main.js"></script>
+</body>
+</html>
