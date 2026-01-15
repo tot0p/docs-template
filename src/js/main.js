@@ -157,7 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load search index
     searchResults.innerHTML = '<div class="search-loading">Chargement de l\'index...</div>';
-    fetch('/search-index.json')
+    const pathPrefix = window.SITE_PATH_PREFIX || '';
+    fetch(pathPrefix + '/search-index.json')
         .then(response => response.json())
         .then(data => {
             searchIndex = data;
