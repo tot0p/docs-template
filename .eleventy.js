@@ -5,6 +5,10 @@ const markdownItContainer = require("markdown-it-container");
 const markdownItTaskLists = require("markdown-it-task-lists");
 
 module.exports = function(eleventyConfig) {
+  // Site configuration
+  eleventyConfig.addGlobalData("siteTitle", "docs-template");
+  eleventyConfig.addGlobalData("siteLogo", "📖");
+  
   // Add syntax highlighting plugin
   eleventyConfig.addPlugin(syntaxHighlight);
 

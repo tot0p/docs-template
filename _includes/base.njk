@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or 'docs-template' }}</title>
+    <title>{{ title or siteTitle }}</title>
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <a href="{{ '/' | url }}" class="logo">
-                    <h2>docs-template</h2>
+                    <h2>{{ siteLogo }} {{ siteTitle }}</h2>
                 </a>
                 <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <span class="theme-icon theme-icon-light">☀️</span>
