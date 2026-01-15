@@ -257,6 +257,5 @@ your-app search "keyword" --category docs
 
 ## Next Steps
 
-- [Explore advanced features](../Advanced-Features/)
-- [Learn about API endpoints](../../API-Reference/Endpoints/)
-- [Check troubleshooting guide](../../Troubleshooting/Common-Issues/)
+- [Explore advanced features]({{ '/docs/User-Guide/Advanced-Features/' | url }})
+- [Learn about API endpoints]({{ '/docs/API-Reference/Endpoints/' | url }})

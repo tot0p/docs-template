@@ -115,6 +115,6 @@ sudo npm install -g your-package
 
 ## Next Steps
 
-- [Configure your environment](../Configuration/)
-- [Learn basic usage](../Basic-Usage/)
-- [Explore advanced features](../Advanced-Features/)
+- [Configure your environment]({{ '/docs/User-Guide/Configuration/' | url }})
+- [Learn basic usage]({{ '/docs/User-Guide/Basic-Usage/' | url }})
+- [Explore advanced features]({{ '/docs/User-Guide/Advanced-Features/' | url }})

@@ -149,5 +149,5 @@ Always use strong, unique values for `SECRET_KEY` in production
 
 ## Next Steps
 
-- [Learn basic usage](../Basic-Usage/)
-- [Explore advanced features](../Advanced-Features/)
+- [Learn basic usage]({{ '/docs/User-Guide/Basic-Usage/' | url }})
+- [Explore advanced features]({{ '/docs/User-Guide/Advanced-Features/' | url }})

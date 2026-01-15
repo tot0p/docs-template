@@ -286,5 +286,5 @@ GET /v1/webhooks/:id/deliveries
 
 ## Next Steps
 
-- [View API endpoints](../Endpoints/)
-- [Check authentication guide](../Authentication/)
+- [View API endpoints]({{ '/docs/API-Reference/Endpoints/' | url }})
+- [Check authentication guide]({{ '/docs/API-Reference/Authentication/' | url }})

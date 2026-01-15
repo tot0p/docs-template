@@ -20,9 +20,14 @@ This documentation template is built with [Eleventy (11ty)](https://www.11ty.dev
 This template provides:
 - 📝 Markdown-based content
 - 🎨 Clean, responsive design
-- 🔍 Built-in search functionality
+- 🔍 Built-in search functionality (recherche en temps réel)
 - 📱 Mobile-friendly navigation
 - ⚡ Fast static site generation
+- 🌙 Dark mode support (automatique + manuel)
+- 🚀 Automatic deployment to GitHub Pages
+- 🖼️ Image and media support
+- 🎯 Customizable site branding (logo + title)
+- 📦 Path prefix support for subdirectory hosting
 
 ---
 
@@ -31,22 +36,28 @@ This template provides:
 ```
 docs-template/
 ├── assets/
-│   └── docs/              # Your markdown documentation files
-│       └── docs.json      # Configuration for docs
+│   ├── docs/              # Your markdown documentation files
+│   │   └── docs.json      # Configuration for docs
+│   └── img/               # Images for documentation
 ├── _includes/             # Layout templates
-│   ├── base.njk          # Main layout
-│   ├── base-clean.njk    # Clean layout (no nav)
+│   ├── base.njk          # Main layout with full navigation
 │   ├── doc.njk           # Documentation page layout
 │   └── nav-item.njk      # Navigation item template
 ├── _data/
-│   └── navigation.js     # Navigation menu configuration
+│   └── navigation.js     # Auto-generated navigation menu
 ├── src/
 │   ├── css/              # Stylesheets
+│   │   └── style.css     # Main stylesheet with dark mode
 │   └── js/               # JavaScript files
+│       └── main.js       # Navigation, search, dark mode logic
+├── .github/
+│   └── workflows/
+│       └── deploy.yml    # GitHub Actions deployment
 ├── _site/                # Generated site (after build)
 ├── index.md              # Homepage
 ├── package.json          # Dependencies and scripts
-└── .eleventy.js          # Eleventy configuration (if present)
+├── .eleventy.js          # Eleventy configuration
+└── search-index.njk      # Search index generator
 ```
 
 ---
@@ -100,6 +111,41 @@ docs-template/
 
 3. **The page is automatically generated** at `/docs/My-New-Doc/`
 
+### Adding Images and Media
+
+1. **Place images** in `assets/img/`:
+   ```
+   assets/img/
+   ├── screenshot.png
+   ├── diagram.jpg
+   └── logo.svg
+   ```
+
+2. **Reference images in markdown**:
+   ```markdown
+   ![Alt text]({{ '/img/screenshot.png' | url }})
+   
+   # Or with relative path
+   ![Diagram]({{ '/img/diagram.jpg' | url }})
+   ```
+
+3. **Example with caption**:
+   ```markdown
+   ![Architecture Diagram]({{ '/img/architecture.png' | url }})
+   *Figure 1: System Architecture Overview*
+   ```
+
+4. **Supported formats**:
+   - Images: `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`
+   - Videos: Embed via HTML
+   - PDFs: Link directly
+
+5. **Image best practices**:
+   - Use descriptive alt text for accessibility
+   - Optimize images before uploading (compress, resize)
+   - Use `.webp` for better performance
+   - Keep images under 1MB when possible
+
 ### Creating Nested Documentation
 
 Create folders to organize your documentation:
@@ -119,35 +165,66 @@ assets/docs/
 
 ## Configuration
 
-### Navigation Menu
+### Site Branding
 
-Edit `_data/navigation.js` to customize the navigation menu:
+Configure your site title and logo in `.eleventy.js`:
 
 ```javascript
-module.exports = [
-  {
-    title: "Getting Started",
-    url: "/docs/Getting-Started/"
-  },
-  {
-    title: "User Guide",
-    children: [
-      {
-        title: "Installation",
-        url: "/docs/User-Guide/Installation/"
-      },
-      {
-        title: "Configuration",
-        url: "/docs/User-Guide/Configuration/"
-      }
-    ]
-  },
-  {
-    title: "API Reference",
-    url: "/docs/API-Reference/"
-  }
-];
+module.exports = function(eleventyConfig) {
+  // Site configuration - Change these values
+  eleventyConfig.addGlobalData("siteTitle", "docs-template");
+  eleventyConfig.addGlobalData("siteLogo", "📖");
+  
+  // ... rest of configuration
+}
 ```
+
+These variables are automatically used in:
+- Page title tags (`<title>`)
+- Navigation header
+- All layout templates
+
+### Path Prefix Configuration
+
+For hosting in a subdirectory (e.g., `username.github.io/my-docs/`):
+
+**Option 1: Environment variable (recommended)**
+
+```bash
+# Development (local)
+npm start
+
+# Production build with prefix
+PREFIX=/my-docs/ npm run build
+```
+
+**Option 2: GitHub repository variable**
+
+Set `PATH_PREFIX` in your repository settings:
+- Go to Settings → Secrets and variables → Actions → Variables
+- Create variable: `PATH_PREFIX` = `/your-repo-name/`
+- The GitHub Action will use it automatically
+
+The pathPrefix is configured in `.eleventy.js`:
+```javascript
+return {
+  pathPrefix: process.env.PREFIX || '/',
+  // ...
+};
+```
+
+### Navigation Menu
+
+The navigation is **automatically generated** from your `assets/docs/` folder structure.
+
+Files and folders are displayed in alphabetical order:
+- Folders appear as expandable dropdowns
+- Markdown files appear as direct links
+- Supports up to 4 levels of nesting
+
+To customize titles, rename your files using kebab-case:
+- `User-Guide.md` → "User Guide"
+- `API-Reference.md` → "API Reference"
 
 ### Homepage
 
@@ -185,6 +262,80 @@ Edit `assets/docs/docs.json` to set default values for all documentation pages:
 
 ## Customization
 
+### Dark Mode
+
+The template includes automatic dark mode support:
+
+**Features:**
+- Automatic detection via `prefers-color-scheme`
+- Manual toggle button in the navigation
+- Persistent user preference (saved in localStorage)
+- Custom colors for light and dark themes
+
+**Customizing colors:**
+
+Edit `src/css/style.css`:
+
+```css
+/* Light mode colors */
+:root {
+  --primary-color: #2563eb;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --text-primary: #1e293b;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text-primary: #f1f5f9;
+  }
+}
+```
+
+**Toggle behavior:**
+- First visit: Uses system preference
+- After manual toggle: Remembers user choice
+- Clear localStorage to reset
+
+### Search Functionality
+
+The built-in search is powered by a generated index:
+
+**How it works:**
+1. `search-index.njk` generates a JSON file during build
+2. JavaScript loads the index on page load
+3. Real-time search as you type
+4. Searches titles, content, and headings
+
+**Customizing search:**
+
+Edit `search-index.njk` to change what's indexed:
+
+```nunjucks
+{
+  "documents": [
+    {%- for page in collections.docs -%}
+    {
+      "title": "{{ page.data.title }}",
+      "url": "{{ page.url }}",
+      "content": {{ content | striptags | dump }},
+      "sections": [...]
+    }
+    {%- endfor -%}
+  ]
+}
+```
+
+**Search features:**
+- Searches in page titles (higher priority)
+- Searches in page content
+- Searches in section headings with anchor links
+- Highlights matching terms
+- Shows relevant excerpts
+
 ### Styling
 
 Edit `src/css/style.css` to customize the appearance:
@@ -213,9 +364,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Modify layouts in `_includes/`:
 
-- `base.njk` - Main layout with navigation
-- `doc.njk` - Documentation page layout
-- `base-clean.njk` - Layout without navigation
+- `base.njk` - Main layout with full navigation, search, and dark mode
+- `doc.njk` - Documentation page layout (extends base.njk)
+- `nav-item.njk` - Reusable navigation item component
+
+**Note:** `base-clean.njk` has been removed as it's no longer needed.
 
 ---
 
@@ -229,6 +382,12 @@ npm run build
 
 This generates the static site in the `_site/` directory.
 
+**Build with path prefix:**
+
+```bash
+PREFIX=/my-docs/ npm run build
+```
+
 ### Development Server
 
 ```bash
@@ -237,19 +396,65 @@ npm start
 
 Runs a local server with live reload at `http://localhost:8080`
 
+### Automatic Deployment to GitHub Pages
+
+This template includes a GitHub Action for automatic deployment:
+
+**Setup:**
+
+1. **Push your repository to GitHub**
+
+2. **Enable GitHub Pages**
+   - Go to repository Settings → Pages
+   - Under "Build and deployment":
+     - Source: Select **"GitHub Actions"**
+
+3. **Configure path prefix (if needed)**
+   - Go to Settings → Secrets and variables → Actions → Variables
+   - Add variable: `PATH_PREFIX` with value like `/your-repo-name/`
+   - Or let it auto-detect from repository name
+
+4. **Push to main branch**
+   ```bash
+   git add .
+   git commit -m "Deploy documentation"
+   git push
+   ```
+
+5. **Site will be automatically deployed**
+   - Workflow runs on every push to `main`
+   - Builds the site with correct path prefix
+   - Deploys to `gh-pages` branch
+   - Available at: `https://username.github.io/repository-name/`
+
+**GitHub Action workflow** (`.github/workflows/deploy.yml`):
+- Automatically detects repository name for path prefix
+- Uses environment variable `PREFIX` during build
+- Supports custom CNAME for custom domains
+- Deploys to `gh-pages` branch
+
+**Custom domain:**
+
+Edit `.github/workflows/deploy.yml` to change the CNAME:
+
+```yaml
+# CNAME file
+echo "yourdomain.com" > CNAME
+```
+
 ### Deployment Options
 
 The generated `_site/` folder can be deployed to:
 
-- **GitHub Pages**
-  ```bash
-  # Push _site folder to gh-pages branch
-  ```
+- **GitHub Pages (Recommended)**
+  - Automatic via GitHub Actions (included)
+  - See "Automatic Deployment" section above
 
 - **Netlify**
   - Connect your repository
   - Build command: `npm run build`
   - Publish directory: `_site`
+  - Environment variable: `PREFIX=/` (or leave empty)
 
 - **Vercel**
   - Import project
@@ -259,12 +464,64 @@ The generated `_site/` folder can be deployed to:
 
 - **Any static hosting**
   - Upload contents of `_site/` folder
+  - Configure web server for clean URLs
 
 ---
 
 ## Examples
 
-### Example 1: Simple Documentation Page
+### Example 1: Page with Images
+
+**File:** `assets/docs/Tutorial.md`
+
+```markdown
+---
+layout: doc.njk
+title: "Tutorial with Images"
+---
+
+# Tutorial with Images
+
+## Overview
+
+This tutorial demonstrates how to use images in your documentation.
+
+## Adding Screenshots
+
+Here's a screenshot of the interface:
+
+![Application Interface]({{ '/img/screenshot.png' | url }})
+*Figure 1: Main application interface*
+
+## Diagram Example
+
+The following diagram shows the architecture:
+
+![System Architecture]({{ '/img/architecture.svg' | url }})
+
+## Multiple Images in a Row
+
+You can use HTML for more control:
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+  <div>
+    <img src="{{ '/img/before.png' | url }}" alt="Before">
+    <p><em>Before</em></p>
+  </div>
+  <div>
+    <img src="{{ '/img/after.png' | url }}" alt="After">
+    <p><em>After</em></p>
+  </div>
+</div>
+
+## Tips
+
+- Always use descriptive alt text
+- Keep images optimized (< 1MB)
+- Use {{ '/img/path' | url }} for proper path handling
+```
+
+### Example 2: Simple Documentation Page
 
 **File:** `assets/docs/Quick-Start.md`
 
@@ -309,8 +566,8 @@ npm start
 
 ## Next Steps
 
-- [Read the full documentation](/docs/User-Guide/)
-- [Check the API reference](/docs/API-Reference/)
+- [Read the full documentation]({{ '/docs/User-Guide/' | url }})
+- [Check the API reference]({{ '/docs/API-Reference/' | url }})
 ```
 
 ---
@@ -548,29 +805,74 @@ To customize search, edit `search-index.njk`.
 
 ---
 
+## Advanced Features
+
+### Dark Mode
+
+- **Automatic detection:** Uses system preference by default
+- **Manual toggle:** Click the sun/moon icon in the header
+- **Persistent:** Saves user preference in localStorage
+- **Custom themes:** Fully customizable via CSS variables
+
+### Search System
+
+- **Real-time search:** Results appear as you type
+- **Smart ranking:** Page titles ranked higher than content
+- **Section search:** Finds specific sections with anchor links
+- **Highlighted results:** Search terms highlighted in excerpts
+
+### Path Prefix Support
+
+Perfect for hosting in subdirectories:
+- Set via `PREFIX` environment variable
+- Auto-detection from GitHub repository name
+- Applies to all internal links via `| url` filter
+
+### Image Optimization
+
+Best practices for images:
+- Place in `assets/img/` directory
+- Use modern formats (WebP, SVG when possible)
+- Compress before uploading
+- Use descriptive filenames
+- Always include alt text
+
+### Automatic Navigation
+
+- Auto-generated from folder structure
+- Supports unlimited nesting levels
+- Alphabetically sorted
+- Folders become expandable dropdowns
+- Active page automatically highlighted
+
+---
+
 ## Tips and Best Practices
 
 ### Documentation Tips
 
 1. **Write for your audience** - Use appropriate technical level
 2. **Include code examples** - Show, don't just tell
-3. **Keep it updated** - Review and update regularly
-4. **Use screenshots** - Visual aids help understanding
+3. **Use images and diagrams** - Visual aids improve understanding
+4. **Keep it updated** - Review and update regularly
 5. **Cross-reference** - Link related documentation
+6. **Test all examples** - Ensure code snippets work
 
 ### Markdown Best Practices
 
-- Use consistent heading levels
-- Include code language in code blocks
+- Use consistent heading levels (H1 for title, H2 for sections)
+- Include code language in code blocks for syntax highlighting
 - Use tables for structured data
-- Add alt text to images
+- Add descriptive alt text to all images
 - Keep paragraphs short and readable
+- Use lists for sequential steps
 
 ### File Naming
 
 - Use kebab-case: `my-doc-page.md`
 - Be descriptive: `installation-guide.md` not `guide.md`
-- Avoid spaces: Use hyphens or underscores
+- Avoid spaces: Use hyphens instead
+- Keep names concise but meaningful
 - Use .md extension for markdown files
 
 ---
@@ -582,28 +884,161 @@ To customize search, edit `search-index.njk`.
 **Problem:** `npm start` fails
 
 **Solution:** 
-1. Delete `node_modules` folder
-2. Delete `package-lock.json`
-3. Run `npm install` again
+1. Delete `node_modules` folder and `package-lock.json`
+2. Run `npm install` again
+3. Check Node.js version (requires v14+)
+
+### Images Not Displaying
+
+**Problem:** Images show broken link icon
+
+**Solution:**
+1. Verify image is in `assets/img/` folder
+2. Check image path uses `{{ '/img/filename.ext' | url }}`
+3. Ensure image filename matches exactly (case-sensitive)
+4. Rebuild site with `npm run build`
 
 ### Navigation Not Updating
 
 **Problem:** Added a page but it doesn't appear in navigation
 
-**Solution:** Update `_data/navigation.js` to include your new page
+**Solution:** 
+- Navigation is auto-generated from `assets/docs/` structure
+- Restart dev server (`Ctrl+C` then `npm start`)
+- Check file has `.md` extension
+- Verify file is in `assets/docs/` directory
 
 ### Styles Not Applying
 
 **Problem:** CSS changes don't appear
 
 **Solution:**
-1. Clear browser cache
-2. Restart development server
-3. Check `src/css/style.css` for syntax errors
+1. Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+2. Clear browser cache
+3. Restart development server
+4. Check `src/css/style.css` for syntax errors
+
+### GitHub Pages 404 Error
+
+**Problem:** Site shows 404 on GitHub Pages
+
+**Solution:**
+1. Verify GitHub Pages is enabled (Settings → Pages)
+2. Source must be set to "GitHub Actions"
+3. Check workflow ran successfully (Actions tab)
+4. Ensure `PATH_PREFIX` matches repository name
+5. Wait a few minutes for deployment to complete
+
+### Search Not Working
+
+**Problem:** Search returns no results
+
+**Solution:**
+1. Check `search-index.json` was generated in `_site/`
+2. Verify JavaScript is enabled in browser
+3. Check browser console for errors
+4. Rebuild site to regenerate search index
+
+### Dark Mode Not Switching
+
+**Problem:** Dark mode toggle doesn't work
+
+**Solution:**
+1. Check JavaScript is enabled
+2. Clear localStorage: `localStorage.clear()` in browser console
+3. Verify `src/js/main.js` is loaded correctly
+4. Check browser console for JavaScript errors
 
 ---
 
 ## Additional Resources
+
+### Official Documentation
+
+- [Eleventy Documentation](https://www.11ty.dev/docs/) - Complete Eleventy guide
+- [Markdown Guide](https://www.markdownguide.org/) - Markdown syntax reference
+- [Nunjucks Templates](https://mozilla.github.io/nunjucks/) - Template language docs
+
+### Useful Tools
+
+- [Squoosh](https://squoosh.app/) - Image compression and optimization
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) - SVG optimizer
+- [WebP Converter](https://developers.google.com/speed/webp) - Convert images to WebP
+
+### Community
+
+- [Eleventy Discord](https://www.11ty.dev/blog/discord/) - Get help and share tips
+- [GitHub Discussions](https://github.com/11ty/eleventy/discussions) - Ask questions
+
+---
+
+## Quick Reference
+
+### Essential Commands
+
+```bash
+# Development
+npm start              # Start dev server with live reload
+npm run build         # Build for production
+npm run serve         # Serve built site locally
+
+# With environment variables
+PREFIX=/docs/ npm run build
+```
+
+### File Structure Quick Reference
+
+```
+assets/
+  ├── docs/           → Your markdown files (auto-navigation)
+  └── img/            → Images (use {{ '/img/file.png' | url }})
+
+src/
+  ├── css/style.css   → Styles (dark mode, colors)
+  └── js/main.js      → Logic (search, navigation, dark mode)
+
+_includes/
+  ├── base.njk        → Main layout
+  └── doc.njk         → Doc page layout
+
+.eleventy.js          → Site config (siteTitle, siteLogo, pathPrefix)
+```
+
+### Common Tasks
+
+**Change site title:**
+```javascript
+// Edit .eleventy.js
+eleventyConfig.addGlobalData("siteTitle", "My Docs");
+eleventyConfig.addGlobalData("siteLogo", "🚀");
+```
+
+**Add image:**
+```markdown
+![Description]({{ '/img/photo.png' | url }})
+```
+
+**Create new doc:**
+```markdown
+---
+layout: doc.njk
+title: "My Page"
+---
+
+# Content here
+```
+
+**Deploy to GitHub:**
+```bash
+git add .
+git commit -m "Update docs"
+git push
+# Auto-deploys via GitHub Actions
+```
+
+---
+
+## Support
 
 - [Eleventy Documentation](https://www.11ty.dev/docs/)
 - [Markdown Guide](https://www.markdownguide.org/)

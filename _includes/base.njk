@@ -50,7 +50,7 @@
                         <h3 class="nav-section-title">Documentation</h3>
                         {% for item in navigation %}
                             {% if item.type == 'file' %}
-                                <a href="{{ item.url }}" class="nav-item">
+                                <a href="{{ item.url | url }}" class="nav-item">
                                     <span class="nav-icon">📄</span>
                                     {{ item.title }}
                                 </a>
@@ -64,7 +64,7 @@
                                     <div class="nav-dropdown-content">
                                         {% for child in item.children %}
                                             {% if child.type == 'file' %}
-                                                <a href="{{ child.url }}" class="nav-item">
+                                                <a href="{{ child.url | url }}" class="nav-item">
                                                     <span class="nav-icon">📄</span>
                                                     {{ child.title }}
                                                 </a>
@@ -78,7 +78,7 @@
                                                     <div class="nav-dropdown-content">
                                                         {% for grandchild in child.children %}
                                                             {% if grandchild.type == 'file' %}
-                                                                <a href="{{ grandchild.url }}" class="nav-item">
+                                                                <a href="{{ grandchild.url | url }}" class="nav-item">
                                                                     <span class="nav-icon">📄</span>
                                                                     {{ grandchild.title }}
                                                                 </a>
@@ -91,7 +91,7 @@
                                                                     </button>
                                                                     <div class="nav-dropdown-content">
                                                                         {% for greatgrandchild in grandchild.children %}
-                                                                            <a href="{{ greatgrandchild.url }}" class="nav-item">
+                                                                            <a href="{{ greatgrandchild.url | url }}" class="nav-item">
                                                                                 <span class="nav-icon">📄</span>
                                                                                 {{ greatgrandchild.title }}
                                                                             </a>

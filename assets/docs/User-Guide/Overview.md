@@ -11,17 +11,17 @@ Welcome to the User Guide section. This documentation will help you understand a
 
 This guide is organized into several sections:
 
-- **[Installation](Installation/)** - How to install and set up
-- **[Configuration](Configuration/)** - Configuring your environment
-- **[Basic Usage](Basic-Usage/)** - Getting started with basic features
-- **[Advanced Features](Advanced-Features/)** - Explore advanced capabilities
+- **[Installation]({{ '/docs/User-Guide/Installation/' | url }})** - How to install and set up
+- **[Configuration]({{ '/docs/User-Guide/Configuration/' | url }})** - Configuring your environment
+- **[Basic Usage]({{ '/docs/User-Guide/Basic-Usage/' | url }})** - Getting started with basic features
+- **[Advanced Features]({{ '/docs/User-Guide/Advanced-Features/' | url }})** - Explore advanced capabilities
 
 ## Quick Links
 
-- [Installation Guide](Installation/)
-- [Configuration Options](Configuration/)
-- [Basic Usage Examples](Basic-Usage/)
-- [Advanced Features](Advanced-Features/)
+- [Installation Guide]({{ '/docs/User-Guide/Installation/' | url }})
+- [Configuration Options]({{ '/docs/User-Guide/Configuration/' | url }})
+- [Basic Usage Examples]({{ '/docs/User-Guide/Basic-Usage/' | url }})
+- [Advanced Features]({{ '/docs/User-Guide/Advanced-Features/' | url }})
 
 ---
 
@@ -29,5 +29,5 @@ This guide is organized into several sections:
 
 If you need assistance:
 1. Check the relevant section in this guide
-2. Review the [Getting Started](/docs/Getting-Started/) documentation
+2. Review the [Getting Started]({{ '/docs/Getting-Started/' | url }}) documentation
 3. Contact support

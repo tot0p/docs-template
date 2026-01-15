@@ -433,6 +433,4 @@ describe('Advanced Features', () => {
 
 ## Next Steps
 
-- [Review API reference](../../API-Reference/Endpoints/)
-- [Check troubleshooting guide](../../Troubleshooting/Common-Issues/)
-- [Explore performance tips](../../Performance/Optimization/)
+- [Review API reference]({{ '/docs/API-Reference/Endpoints/' | url }})

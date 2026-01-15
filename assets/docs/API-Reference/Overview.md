@@ -24,9 +24,9 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 
 ## Sections
 
-- **[Authentication](Authentication/)** - Authentication endpoints
-- **[Endpoints](Endpoints/)** - Complete endpoint reference
-- **[Webhooks](Webhooks/)** - Webhook configuration
+- **[Authentication]({{ '/docs/API-Reference/Authentication/' | url }})** - Authentication endpoints
+- **[Endpoints]({{ '/docs/API-Reference/Endpoints/' | url }})** - Complete endpoint reference
+- **[Webhooks]({{ '/docs/API-Reference/Webhooks/' | url }})** - Webhook configuration
 
 ## Rate Limits
 
