@@ -8,6 +8,8 @@ module.exports = function(eleventyConfig) {
   // Site configuration
   eleventyConfig.addGlobalData("siteTitle", "docs-template");
   eleventyConfig.addGlobalData("siteLogo", "📖");
+  // Add pathPrefix as global data for use in templates
+  eleventyConfig.addGlobalData("pathPrefix", process.env.PREFIX || '/');
   
   // Add syntax highlighting plugin
   eleventyConfig.addPlugin(syntaxHighlight);
